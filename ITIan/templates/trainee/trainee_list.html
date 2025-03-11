@@ -1,0 +1,28 @@
+{% block content %}
+<h1>Trainee List</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for trainee in trainees %}
+        <tr>
+            <td>{{ trainee.name }}</td>
+            <td>{{ trainee.email }}</td>
+            <td>{{ trainee.phone }}</td>
+            <td>
+                <a href="{% url 'update_trainee' trainee.id %}">Edit</a>
+                <a href="{% url 'delete_trainee' trainee.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+>
